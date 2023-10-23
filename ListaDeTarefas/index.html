@@ -5,43 +5,42 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-        <title>O que vamos fazer hoje?</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>Lista de Tarefas</title>
     </head>
     <body class="container-fluid">
-        <header class="h1 text-center">Lista de Tarefas</header>
-        <main class="container">
+        <main class="container shadow-lg p-3 mb-5 bg-white rounded">
+            <header class="h1 text-center">O que vamos fazer hoje?</header>
             <div id="Add" class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Digite aqui sua tarefa..">
-                <button type="button" class="btn btn-outline-secondary">+</button>
+                <button class="btn btn-outline-secondary">+</button>
             </div>
             <div id="Edit" class="input-group mb-3">
                 <input class="form-control" type="text" placeholder="Edite sua tarefa..">
-                <button type="button" class="btn btn-outline-secondary">+</button>
+                <button class="btn btn-outline-secondary">+</button>
             </div>
-            <section>
-                <h4>Filtro</h4>
-                <select name="" id="">
-                    <option value="">A fazer</option>
-                    <option value="">Feito</option>
-                </select>
-            </section>
+            <div class="btn-group">
+                <button class="btn btn-secondary">Filtro</button>
+                <button class="btn btn-secondary">A fazer</button>
+                <button class="btn btn-secondary">Feito</button>
+            </div>   
             <ul style="margin-top: 1rem; padding: 0;">
                 <li class="d-flex flex-row bd-highlight mb-3 border border-5 rounded-4">
-                    <button class="btn btn-outline-secondary">Xmark</button>
+                    <button class="btn btn-outline-secondary"><i class="fa-solid fa-check"></i></button>
                     <p style="margin: 2px auto;">Fazer exercicios</p>
-                    <button class="btn btn-outline-secondary">Edit</button>
-                    <button class="btn btn-outline-secondary ms-1">Excluir</button>
+                    <button class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
+                    <button class="btn btn-outline-secondary ms-1"><i class="fa-solid fa-xmark"></i></button>
                 </li>
                 <li class="d-flex flex-row bd-highlight mb-3 border border-5 rounded-4">
-                    <button class="btn btn-outline-secondary">Xmark</button>
+                    <button class="btn btn-outline-secondary"><i class="fa-solid fa-check"></i></button>
                     <p style="margin: 2px auto;">comprar pão</p>
-                    <button class="btn btn-outline-secondary">Edit</button>
-                    <button class="btn btn-outline-secondary ms-1">Excluir</button>
+                    <button class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
+                    <button class="btn btn-outline-secondary ms-1"><i class="fa-solid fa-xmark"></i></button>
                 </li>
             </ul>
+            <footer class="text-center text-body-secondary">&copy;My Site All Directs Reserved 2023.</footer>
         </main>
         <script src="assets/js/script.js"></script>
-        <footer class="text-center text-body-secondary">&copy;My Site All Directs Reserved 2023.</footer>
     </body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>
