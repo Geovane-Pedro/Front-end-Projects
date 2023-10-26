@@ -11,33 +11,20 @@
     <body class="container-fluid">
         <main class="container shadow-lg p-3 mb-5 bg-white rounded">
             <header class="h1 text-center">O que vamos fazer hoje?</header>
-            <div id="Add" class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Digite aqui sua tarefa..">
-                <button class="btn btn-outline-secondary">+</button>
-            </div>
-            <div id="Edit" class="input-group mb-3">
-                <input class="form-control" type="text" placeholder="Edite sua tarefa..">
-                <button class="btn btn-outline-secondary">+</button>
-            </div>
+            <form class="input-group mb-3">
+                <input id="inputadd" type="text" class="form-control" placeholder="Digite aqui sua tarefa..">
+                <button id="buttonadd" type="reset" class="btn btn-outline-secondary">+</button>
+            </form>
+            <form class="input-group mb-3">
+                <input id="inputedit" class="form-control" type="text" placeholder="Edite sua tarefa..">
+                <button id="buttonedit" type="reset" class="btn btn-outline-secondary">+</button>
+            </form>
             <div class="btn-group">
                 <button class="btn btn-secondary">Filtro</button>
                 <button class="btn btn-secondary">A fazer</button>
                 <button class="btn btn-secondary">Feito</button>
             </div>   
-            <ul style="margin-top: 1rem; padding: 0;">
-                <li class="d-flex flex-row bd-highlight mb-3 border border-5 rounded-4">
-                    <button class="btn btn-outline-secondary"><i class="fa-solid fa-check"></i></button>
-                    <p style="margin: 2px auto;">Fazer exercicios</p>
-                    <button class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
-                    <button class="btn btn-outline-secondary ms-1"><i class="fa-solid fa-xmark"></i></button>
-                </li>
-                <li class="d-flex flex-row bd-highlight mb-3 border border-5 rounded-4">
-                    <button class="btn btn-outline-secondary"><i class="fa-solid fa-check"></i></button>
-                    <p style="margin: 2px auto;">comprar pão</p>
-                    <button class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
-                    <button class="btn btn-outline-secondary ms-1"><i class="fa-solid fa-xmark"></i></button>
-                </li>
-            </ul>
+            <ul id="lists" style="margin-top: 1rem; padding: 0;"></ul>
             <footer class="text-center text-body-secondary">&copy;My Site All Directs Reserved 2023.</footer>
         </main>
         <script src="assets/js/script.js"></script>
