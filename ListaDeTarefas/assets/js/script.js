@@ -1,7 +1,10 @@
 class Tarefa{
-    constructor(state, description){
-        this.state = state
+    constructor(description){
+        this.state = false
         this.description = description
+    }
+    setList(params){
+        this.description = params
     }  
 }
 let tarefas = []
@@ -11,15 +14,21 @@ const buttonAdd = document.querySelector("#buttonadd")
 const inputEdit = document.querySelector("#inputedit")
 const buttonEdit = document.querySelector("#buttonedit")
 const lists = document.querySelector("#lists")
+let position
 
 buttonAdd.addEventListener('click', () =>{
-    const tarefa = new Tarefa(
-        this.state = false,
-        this.description = inputAdd.value
-    )
+    const tarefa = new Tarefa(inputAdd.value)
     tarefas.push(tarefa)
     toShow()
 })
+inputAdd.addEventListener('keydown', (e) =>{
+    if(e.key === "Enter"){
+        const tarefa = new Tarefa(inputAdd.value)
+        tarefas.push(tarefa)
+        toShow()
+        inputAdd.value = ''
+        e.preventDefault()
+}})
 const toShow = () => {
     lists.innerHTML = ""
     tarefas.map((e) =>{ 
@@ -28,14 +37,38 @@ const toShow = () => {
         li.innerHTML =`
             <button class="btn btn-outline-secondary"><i class="fa-solid fa-check"></i></button>
             <p style="margin: 2px auto;">${e.description}</p>
-            <button class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
+            <button class="btn btn-outline-secondary"><i class="fa-solid fa-pen" onclick="editList(${tarefas.indexOf(e)})"></i></button>
             <button class="btn btn-outline-secondary ms-1"><i class="fa-solid fa-xmark" onclick="inputDelete(${tarefas.indexOf(e)})"></i><button>
             ` 
         lists.appendChild(li) 
     })
 }
-
 function inputDelete(i){
     tarefas.splice(i, 1)
     toShow()
 }
+const toggleForms = () => {
+    const inputHideAdd = document.querySelector('#inputHideAdd')
+    const inputHideEdit = document.querySelector('#inputHideEdit')
+    inputHideAdd.classList.toggle("hide")
+    inputHideEdit.classList.toggle("hide")
+    lists.classList.toggle("hide")
+}
+function editList(i) {
+    inputEdit.value = tarefas[i].description
+    toggleForms()
+    return position = i
+}
+buttonEdit.addEventListener('click', () =>{
+    tarefas[position].setList(inputEdit.value)
+    toShow()
+    toggleForms()
+})
+buttonEdit.addEventListener('keydown', (e) =>{
+    if(e.key === "Enter"){
+        tarefas[position].setList(inputEdit.value)
+        toShow()
+        inputAdd.value = ''
+        toggleForms()
+        e.preventDefault()
+}})
