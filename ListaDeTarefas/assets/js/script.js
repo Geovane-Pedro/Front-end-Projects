@@ -33,16 +33,10 @@ const toShow = () => {
     lists.innerHTML = ""
     tarefas.map((e) =>{ 
         const li = document.createElement("li")
-        li.setAttribute("id", tarefas.indexOf(e))
-        if (e.state == false) {
-            console.log("False")   
-        }else{
-            console.log("True")
-        }
-        li.setAttribute("class","d-flex flex-row bd-highlight mb-3 border border-5 rounded-4")
+        li.setAttribute("class",`d-flex flex-row bd-highlight mb-3 border border-5 rounded-4`)
         li.innerHTML =`
             <button onclick="alterButton(${tarefas.indexOf(e)})" class="btn btn-outline-secondary"><i class="fa-solid fa-check"></i></button>
-            <p style="margin: 2px auto;">${e.description}</p>
+            <p class="task ${e.state && "done"}">${e.description}</p>
             <button class="btn btn-outline-secondary"><i class="fa-solid fa-pen" onclick="editList(${tarefas.indexOf(e)})"></i></button>
             <button class="btn btn-outline-secondary ms-1"><i class="fa-solid fa-xmark" onclick="inputDelete(${tarefas.indexOf(e)})"></i><button>
             ` 
@@ -80,10 +74,11 @@ buttonEdit.addEventListener('keydown', (e) =>{
 }})
 
 function alterButton(i){
-  /*let li = document.getElementById(`${i}`)
-  li.style.backgroundColor ="green" */
-  tarefas[i].state = true
-  console.log(tarefas[i].state)
-
+  tarefas[i].state = !tarefas[i].state
+  toShow()
 }
-
+/*falta inserir o filtro
+corrigir bug do editar com evento de teclado
+avisar tarefa vazia
+tarefa repetida
+ficar atento ao botão excluir*/

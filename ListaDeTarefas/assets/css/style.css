@@ -13,3 +13,12 @@ main{
 .hide{
     display: none;
 }
+.task{
+    margin: 2px auto;
+    border-radius: 10%;
+    padding: 0.3em;
+    color: black;
+}
+.done{
+    text-decoration: line-through;
+}
