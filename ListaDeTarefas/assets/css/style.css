@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 body{
     background-color: #eee;
@@ -8,7 +9,10 @@ body{
 main{
     background-color: white;
     margin-top: 5%;
-    border-radius: 2%;
+    border-radius: 4%;
+}
+p{
+    font-size: larger;
 }
 .hide{
     display: none;
@@ -21,4 +25,8 @@ main{
 }
 .done{
     text-decoration: line-through;
+    background-color: #e9ecef;
+}
+.houver:hover{
+    background-color: #dee2e6;
 }
