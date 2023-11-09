@@ -14,9 +14,6 @@ main{
 p{
     font-size: larger;
 }
-.hide{
-    display: none;
-}
 .task{
     margin: 2px auto;
     border-radius: 10%;

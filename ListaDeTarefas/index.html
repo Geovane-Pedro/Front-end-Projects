@@ -11,14 +11,10 @@
     </head>
     <body class="container-fluid">
         <main class="container shadow-lg p-3 mb-5 bg-white rounded">
-            <header class="h1 text-center">O que vamos fazer hoje?</header>
+            <header class="h1 text-center">O que você pretende fazer?</header>
             <form class="input-group mb-3" id="inputHideAdd">
                 <input id="inputadd" type="text" class="form-control" placeholder="Digite aqui sua tarefa..">
                 <button id="buttonadd" type="reset" class="btn btn-outline-secondary">+</button>
-            </form>
-            <form class="input-group mb-3 hide" id="inputHideEdit">
-                <input id="inputedit" class="form-control" type="text">
-                <button id="buttonedit" type="reset" class="btn btn-outline-secondary">+</button>
             </form>
             <div class="btn-group">
                 <button class="btn btn-secondary" id="allTasks">Tarefas</button>
@@ -28,7 +24,27 @@
             <ul id="lists" style="margin-top: 1rem; padding: 0;"></ul>
             <footer class="text-center text-body-secondary">&copy;My Site All Directs Reserved 2023.</footer>
         </main>
-        <script src="assets/js/script.js"></script>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Edite sua tarefa</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="input-group mb-3" id="inputHideEdit">
+                            <input id="inputedit" class="form-control" type="text">
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button id="buttonedit" type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="saveEdit()">Salvar Mudanças</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
+    <script src="assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>
