@@ -3,44 +3,48 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <title>O que vamos fazer hoje?</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="shortcut icon" href="assets/pen.png" type="image/x-icon">
+        <title>Lista de Tarefas</title>
     </head>
-    <body>
-        <header class="title">Lista de Tarefas</header>
-        <main class="container">
-            <div id="Add">
-                <input type="text" placeholder="Digite aqui sua tarefa..">
-                <button>+</button>
-            </div>
-            <div id="Edit">
-                <label for="c">Edite sua Tarefa:</label>
-                <input type="text" class="c">
-                <button>+</button>
-            </div>
-            <section>
-                <h4>Filtro</h4>
-                <select name="" id="">
-                    <option value="">A fazer</option>
-                    <option value="">Feito</option>
-                </select>
-            </section>
-            <ul>
-                <li>
-                    <button>Xmark</button>
-                    <p>Fazer exercicios</p>
-                    <button>Edit</button>
-                    <button>Excluir</button>
-                </li>
-                <li>
-                    <button>Xmark</button>
-                    <p>comprar pão</p>
-                    <button>Edit</button>
-                    <button>Excluir</button>
-                </li>
-            </ul>
+    <body class="container-fluid">
+        <main class="container shadow-lg p-3 mb-5 bg-white rounded">
+            <header class="h1 text-center">O que você pretende fazer?</header>
+            <form class="input-group mb-3" id="inputHideAdd">
+                <input id="inputadd" type="text" class="form-control" placeholder="Digite aqui sua tarefa..">
+                <button id="buttonadd" type="reset" class="btn btn-outline-secondary">+</button>
+            </form>
+            <div class="btn-group">
+                <button class="btn btn-secondary" id="allTasks">Tarefas</button>
+                <button class="btn btn-secondary" id="toDo">A fazer</button>
+                <button class="btn btn-secondary" id="taskDone">Feito</button>
+            </div>   
+            <ul id="lists" style="margin-top: 1rem; padding: 0;"></ul>
+            <footer class="text-center text-body-secondary">&copy;My Site All Directs Reserved 2023.</footer>
         </main>
-        <script src="script.js"></script>
-        <footer>&copy;My Site All Directs Reserved 2023.</footer>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Edite sua tarefa</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="input-group mb-3" id="inputHideEdit">
+                            <input id="inputedit" class="form-control" type="text">
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button id="buttonedit" type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="saveEdit()">Salvar Mudanças</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
+    <script src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>
